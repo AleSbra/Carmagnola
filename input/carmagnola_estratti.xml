@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="myTEI_carm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-stylesheet type="text/xsl" href="xslt_carm.xsl"?>
+<?xml-stylesheet type="text/xsl" href="xslt_pulito_carm.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Prototipo Manzoni, un'edizione digitale per <hi style="italic">Il Conte di
+                  Carmagnola</hi> nelle sue due redazioni manzoniane.</title>
+         </titleStmt>
+         <editionStmt>
+            <edition>Digital Edition</edition>
+            <respStmt>
+               <resp>Editor</resp>
+               <name>Alessia Marini</name>
+            </respStmt>
+         </editionStmt>
+
+         <publicationStmt>
+            <distributor>
+               <ref target="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0
+                  International (CC BY 4.0)</ref>
+            </distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <p>I facsimile delle due redazioni manoscritte denominate MANZ e CC, sono stati
+               acquistiti manualmente, fotografando o scansionando gli originali.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <!--<change xml:id="">
+                        <desc></desc>
+                    </change>-->
+            <listChange xml:id="writing_ma">
+               <change xml:id="wma01">
+                  <desc>porzione di testo altro personaggio</desc>
+               </change>
+               <change xml:id="wma02">
+                  <desc>Conte</desc>
+               </change>
+               <change xml:id="wma03">
+                  <desc>prima porzione composta</desc>
+               </change>
+               <change xml:id="wma03-1" type="refused">
+                  <desc>testo eliminato</desc>
+               </change>
+               <change xml:id="wma04">
+                  <desc>testo riscritto</desc>
+               </change>
+            </listChange>
+            <listChange xml:id="writing_cc">
+               <change xml:id="wcc01">
+                  <desc>Conte</desc>
+               </change>
+               <change xml:id="wcc02">
+                  <desc>porzione di testo</desc>
+               </change>
+            </listChange>
+            <listChange xml:id="reading_ma">
+               <change xml:id="rma01" type="txt">
+                  <desc>personaggio precedente</desc>
+               </change>
+               <change xml:id="rma02" type="ptxt">
+                  <desc>Conte</desc>
+               </change>
+               <change xml:id="rma03" type="txt">
+                  <desc>prima porzione di testo</desc>
+               </change>
+               <change xml:id="rma04" type="txt">
+                  <desc>testo aggiunto</desc>
+               </change>
+               <change xml:id="rma05" type="txt">
+                  <desc>testo finale</desc>
+               </change>
+            </listChange>
+            <listChange xml:id="reading_cc">
+               <change xml:id="rcc01" type="ptxt">
+                  <desc>Conte</desc>
+               </change>
+               <change xml:id="rcc02" type="txt">
+                  <desc>testo</desc>
+               </change>
+            </listChange>
+         </creation>
+      </profileDesc>
+   </teiHeader>
+   <sourceDoc>
+      <surfaceGrp xml:id="sg1">
+         <surface n="01" xml:id="sma1">
+            <graphic url="images/Manz_1.png" width="1539.03125px" height="2047.03125px"/>
+            <zone ulx="649" uly="277" lrx="1329" lry="437" change="#wma01 #rma01"
+               style="font-size:24" rend="posizione:2.1 2">
+               <line>Ben altro conto. Or d’essa <gap/> un primo pegno</line>
+               <line>Il vostro schietto consigliar ci sia. </line>
+            </zone>
+            <zone ulx="853" uly="457" lrx="1053" lry="520" change="#wma02 #rma02"
+               style="font-size:24" rend="posizione:1.1 2">
+               <line type="subtitle">Il Conte</line>
+            </zone>
+            <zone ulx="591" uly="518" lrx="1323" lry="1904" change="#wma03" style="font-size:24"
+               rend="posizione:2.25 2">
+               <line>Lieto son io che un tal consiglio io possa</line>
+               <line><milestone unit="seg" n="0001"/>Darvi senza esitanza: io tengo al tutto</line>
+               <line>Necessaria la guerra, e della guerra,</line>
+               <line>Se oltre il presente è mai concesso all’uomo</line>
+               <line>Cosa certa veder, certo l’evento; </line>
+               <line> Tanto più, quanto fien gl’indugi meno. </line>
+               <line> A che partito è il Duca? a mezzo è vinta </line>
+               <line>Da lui Firenze; ma spossato e fiacco</line>
+               <line>Il vincitor; vuoti gli erari: oppressi </line>
+               <line> Dal terror, dai tributi i cittadini</line>
+               <line> Pregan dal ciel su l’armi loro istesse </line>
+               <line>Le sconfitte e le fughe. Io gli conosco, </line>
+               <line> E conoscer li deggio: a molti in mente </line>
+               <line>Dura <add place="above" style="indent:635"><del>Dura</del></add> il pensier
+                  del glorioso, antico </line>
+               <line> Viver civile; essi bramoso il guardo </line>
+               <line> Volgono ovunque appena un raggio sembri </line>
+               <line> D’un avvenir diverso sollevarsi</line>
+               <line>Frementi del presente e vergognosi.</line>
+               <line>Ei conosce il periglio; indi l’udite</line>
+               <line>Mansueto parlarvi; indi vi chiede</line>
+            </zone>
+            <zone ulx="591" uly="518" lrx="591" lry="1703" change="#rma03" style="font-size:24"
+               rend="posizione:2.15 2">
+               <line>Lieto son io che un tal consiglio io possa</line>
+               <line>Darvi senza esitanza: io tengo al tutto</line>
+               <line>Necessaria la guerra, e della guerra,</line>
+               <line>Se oltre il presente è mai concesso all’uomo</line>
+               <line>Cosa certa veder, certo l’evento; </line>
+               <line> Tanto più, quanto fien gl’indugi meno. </line>
+               <line> A che partito è il Duca? a mezzo è vinta </line>
+               <line>Da lui Firenze; ma spossato e fiacco</line>
+               <line>Il vincitor; vuoti gli erari: oppressi </line>
+               <line> Dal terror, dai tributi i cittadini</line>
+               <line> Pregan dal ciel su l’armi loro istesse </line>
+               <line>Le sconfitte e le fughe. Io gli conosco, </line>
+               <line> E conoscer li deggio: a molti in mente </line>
+               <line>Dura <add place="above" style="indent:635"><del>Dura</del></add> il pensier
+                  del glorioso, antico </line>
+            </zone>
+            <zone ulx="591" uly="1472" lrx="1216" lry="1703" change="#wma03-1" style="nobox;">
+               <delSpan rend="cross" spanTo="#del1"/>
+               <anchor xml:id="del1"/></zone>
+            <zone ulx="1" uly="1439" lrx="580" lry="1666" change="#wma04 #rma04"
+               style="font-size:24" rend="posizione:2.25 2">
+               <line>Viver civile; e tostamente <del>il</del>
+                  <add place="above" style="indent:370">un</add> guardo</line>
+               <line>Rivolgon di desio <del>laddove un raggio</del><add place="above"
+                     style="indent:286">là dove appena</add></line>
+               <line> D’un qualunque avvenir si mostri <del>appena</del><add place="above"
+                     style="indent:469">un raggio</add>,</line>
+            </zone>
+            <zone ulx="591" uly="1703" lry="1904" lrx="1323" change="#rma05" style="font-size:24"
+               rend="posizione:1.6 0.5">
+               <line>Frementi del presente e vergognosi.</line>
+               <line>Ei conosce il periglio; indi l’udite</line>
+               <line>Mansueto parlarvi; indi vi chiede</line>
+            </zone>
+         </surface>
+         <surface n="02" xml:id="scc1">
+            <graphic url="images/Cc_1.png" width="1539.03125px" height="2446.03125px"/>
+            <zone ulx="517" uly="235" lrx="805" lry="334" change="#wcc01 #rcc01"
+               style="font-size:24" rend="posizione:1.1 2">
+               <line type="subtitle">Il Conte </line>
+            </zone>
+            <zone ulx="198" uly="299" lrx="1315" lry="2264" change="#wcc02 #rcc02"
+               style="font-size:24" rend="posizione:2.7 2">
+               <line>Lieto son’ io che un tal consiglio io possa </line>
+               <line>Darvi senza esitanza. Io tengo al tutto </line>
+               <line> Necessaria la guerra, e della guerra – </line>
+               <line> Se oltre il presente è mai concesso all'uomo </line>
+               <line> Cosa certa veder – certo l'evento;</line>
+               <line> Tanto più, quanto fien gl'indugi meno.</line>
+               <line> A che partito è il Duca? A mezzo è vinta </line>
+               <line> Da lui Firenze: ma ferito e stanco</line>
+               <line> Il vincitor: vuoti gli erarj: oppressi </line>
+               <line> Dal terror, dai tributi i cittadini </line>
+               <line> Pregan dal ciel su l'armi loro istesse </line>
+               <line> Le sconfitte e le fughe. Io li conosco, </line>
+               <line> E conoscer li deggio: a molti in mente </line>
+               <line> Dura il pensier del glorïoso, antico</line>
+               <line> Viver civile; e tostamente un guardo </line>
+               <line> Rivolgon di desio là dove appena </line>
+               <line> D'un qualunque avvenir si mostri un raggio, </line>
+               <line> Frementi del presente e vergognosi. </line>
+               <line> Ei conosce il periglio; indi l'udite </line>
+               <line> Mansueto parlarvi; indi vi chiede</line>
+               <line> Tempo soltanto da sbranar la preda </line>
+               <line> Che già tiensi fra l'ugne, e divorarla. </line>
+            </zone>
+         </surface>
+      </surfaceGrp>
+<!--      <surfaceGrp xml:id="sg2">
+       
+      </surfaceGrp>-->
+   </sourceDoc>
+</TEI>

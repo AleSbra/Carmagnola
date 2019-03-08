@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Manoscritti manzoniani con testo in pulito</title>
+            </titleStmt>
+            <editionStmt>
+                <edition>Digital Edition</edition>
+                <respStmt>
+                    <resp>Editor</resp>
+                    <name>Alessia Marini</name>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <distributor>
+                    <ref target="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0
+                        International (CC BY 4.0)</ref>
+                </distributor>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <group>
+            <text xml:id="ma">
+               <body> <div n="01">
+                    
+                </div></body>
+            </text>
+        </group>
+    </text>
+</TEI>
