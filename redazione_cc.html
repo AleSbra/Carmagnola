@@ -253,11 +253,11 @@ text-shadow: -1px 0px hsla(0,0%,0%,1.00);
         <div class="box"><p><a href="index.html" class="button">Home</a></p>
             <p><a href="redazione_ma.html" class="button" id="switch_order">Vedi la Redazione MA</a></p>
 		<p><b>Redazione CC</b></p>  
-            <p><a id="writing_sp" href="" class="button">Ordine Narrativo</a> &nbsp;<a href="lettura_sp.html" class="but toggleTranscription"><i>testo</i></a></p>
-            <p><a id="writing_fl" href="" class="button modeOn">Ordine Compositivo</a> &nbsp;<a href="lettura_sp.html" class="but toggleTranscription"><i>testo</i></a></p>
+            <p><a id="reading_cc" href="" class="button">Ordine Narrativo</a> &nbsp;<a href="lettura_sp.html" class="but toggleTranscription"><i>testo</i></a></p>
+            <p><a id="writing_cc" href="" class="button modeOn">Ordine Compositivo</a> &nbsp;<a href="lettura_sp.html" class="but toggleTranscription"><i>testo</i></a></p>
 
 <p><b>Vai a:</b> <a id="prev" href="" class="button">&lt;&lt;</a> <select id="pagelist">
-    <option value="50r">01</option>
+    <option value="01">01</option>
 </select> <a id="next" href="" class="button">&gt;&gt;</a></p> 
 		
 			<!--<p><a href="cartiglio_1.html" onclick="return popitup('cartiglio_1.html')" class="button">Cartiglio 1</a></p>		
@@ -265,7 +265,7 @@ text-shadow: -1px 0px hsla(0,0%,0%,1.00);
 </div>
      
 
-    <div id="testo" data-mode="fl">
+    <div id="testo" data-mode="ma">
         <h3>Trascrizione <span id="testo_mode">Redazione MA</span></h3>
         <div id="testo_content"></div>
     </div>
@@ -302,7 +302,7 @@ function getsrc() {
 }
 
 function updatestyle(l) {
-    off = $(l).attr('id') == 'writing_fl' ? 'writing_sp' : 'writing_fl';
+    off = $(l).attr('id') == 'reading_cc' ? 'writing_cc' : 'reading_cc';
     $('#'+off).removeClass('modeOn'); 
     $(l).addClass('modeOn');
 }
@@ -506,7 +506,7 @@ $('body').click(function() {
 function showPatch(target) {
 
     if ($('#' + target.replace(/\./g, '_')).length == 0) {
-        $.get('output/writing_sp/'+target+'--writing_sp.svg', function(data){        
+        $.get('output/writing_cc/'+target+'--writing_cc.svg', function(data){        
         svgRoot = $(data).find('svg');
         
         visibleAnchor = false
@@ -712,15 +712,15 @@ function goToPage(pageRequested) {
 // Set text (image list)
 function setText(text) {
     switch (text) {
-        case 'cc': 
+        case 'reading_cc': 
             imglist = 1;
-            $('#writing_sp').addClass('modeOn')
-            $('#writing_fl').removeClass('modeOn')
+            $('#reading_cc').addClass('modeOn')
+            $('#writing_cc').removeClass('modeOn')
         break;
-        case 'ma': 
+        case 'writing_cc': 
             imglist = 0;
-            $('#writing_fl').addClass('modeOn')
-            $('#writing_sp').removeClass('modeOn')
+            $('#writing_cc').addClass('modeOn')
+            $('#reading_cc').removeClass('modeOn')
         break;
         default: imglist = 0        
     }
@@ -738,7 +738,7 @@ function showTranscription(folio, mode) {
         }, 'text')
     
     $('#testo').data('mode', mode)
-    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione MA'
+    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione CC'
     $('#testo_mode').text(mode_label)
    
 }
@@ -746,7 +746,7 @@ function showTranscription(folio, mode) {
 // show apparatus
     // TODO: May want to combine this with showTranscription
 function showApparatus(appnum, mode) {
-    $.get('testoapparato/puliti/'+mode+'/'+appnum+'.html', function(data) {
+    $.get('testo_apparato/puliti/'+mode+'/'+appnum+'.html', function(data) {
             text = $.grep($(data), function( n, i ) {
                 return ( $(n).hasClass('box') );
             })[0]
@@ -756,7 +756,7 @@ function showApparatus(appnum, mode) {
         }, 'text')
     
     $('#testo').data('mode', mode)
-    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione MA'
+    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione CC'
     $('#testo_mode').text(mode_label)
    
 }
@@ -812,8 +812,8 @@ function setHashParam(param) {
 
 // General Controls
 
-$('#writing_fl').click(function() {removePatches(); setHashParam({key: 'testo', value: 'ma'}); updatestyle(this); return false});
-$('#writing_sp').click(function() {removePatches(); setHashParam({key: 'testo', value: 'cc'}); updatestyle(this); return false});
+$('#reading_cc').click(function() {removePatches(); setHashParam({key: 'testo', value: 'reading_cc'}); updatestyle(this); return false});
+$('#writing_cc').click(function() {removePatches(); setHashParam({key: 'testo', value: 'writing_cc'}); updatestyle(this); return false});
 $('#pagelist').change(function(e) {
     value = $(e.target).find('option:selected')[0].value
     setHashParam({key: 'folio', value: value});
