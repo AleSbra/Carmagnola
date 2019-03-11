@@ -265,8 +265,8 @@ text-shadow: -1px 0px hsla(0,0%,0%,1.00);
 </div>
      
 
-    <div id="testo" data-mode="ma">
-        <h3>Trascrizione <span id="testo_mode">Redazione MA</span></h3>
+    <div id="testo" data-mode="reading_cc">
+        <h3>Trascrizione <span id="testo_mode">Redazione CC</span></h3>
         <div id="testo_content"></div>
     </div>
     
@@ -738,7 +738,7 @@ function showTranscription(folio, mode) {
         }, 'text')
     
     $('#testo').data('mode', mode)
-    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione CC'
+    mode_label = mode === 'reading_cc'? 'writing_cc' : 'reading_cc'
     $('#testo_mode').text(mode_label)
    
 }
@@ -756,7 +756,7 @@ function showApparatus(appnum, mode) {
         }, 'text')
     
     $('#testo').data('mode', mode)
-    mode_label = mode === 'cc'? 'Redazione CC' : 'Redazione CC'
+    mode_label = mode === 'reading_cc'? 'writing_cc' : 'reading_cc'
     $('#testo_mode').text(mode_label)
    
 }
